@@ -13,8 +13,7 @@ const API_NOTIF  = 'https://ichamba-backend-final.onrender.com/api/usuarios/noti
 export default function NotificacionesEmpleador() {
   const [notificaciones, setNotificaciones] = useState<Notificacion[]>([])
   const [loading, setLoading]               = useState(true)
-  const [mensaje, setMensaje]               = useState('')
-
+const [mensaje] = useState('')
   const token   = localStorage.getItem('token')
   const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }
 
