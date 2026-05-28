@@ -25,7 +25,7 @@ export default function PublicarOferta() {
 
     try {
       const token = localStorage.getItem('token')
-      const res = await fetch('http://localhost:4000/api/ofertas', {
+      const res = await fetch('https://ichamba-backend-final.onrender.com/api/ofertas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

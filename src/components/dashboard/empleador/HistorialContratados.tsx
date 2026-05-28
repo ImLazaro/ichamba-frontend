@@ -13,7 +13,7 @@ interface Contratado {
   notas: string
 }
 
-const API = 'http://localhost:4000/api/historial'
+const API = 'https://ichamba-backend-final.onrender.com/api/historial'
 
 export default function HistorialContratados() {
   const [historial, setHistorial]     = useState<Contratado[]>([])

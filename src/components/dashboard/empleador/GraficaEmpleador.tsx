@@ -12,7 +12,7 @@ export default function GraficaEmpleador() {
     const fetchDatos = async () => {
       try {
         const token = localStorage.getItem('token')
-        const res   = await fetch('http://localhost:4000/api/ofertas/mis-ofertas', {
+        const res   = await fetch('https://ichamba-backend-final.onrender.com/api/ofertas/mis-ofertas', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
         const ofertas = await res.json()

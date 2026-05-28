@@ -45,7 +45,7 @@ export default function Ofertas() {
       if (filtroTipo)  params.append('tipo_contrato', filtroTipo)
       if (filtroPrac)  params.append('es_practicas', 'true')
 
-      const res  = await fetch(`http://localhost:4000/api/ofertas/publicas?${params}`)
+      const res  = await fetch(`https://ichamba-backend-final.onrender.com/api/ofertas/publicas?${params}`)
       const data = await res.json()
       setOfertas(data)
     } catch (err) {
@@ -67,7 +67,7 @@ export default function Ofertas() {
     setMensajes(p => ({ ...p, [oferta.id]: '' }))
     setErrores(p => ({ ...p, [oferta.id]: '' }))
     try {
-      const res  = await fetch(`http://localhost:4000/api/ofertas/${oferta.id}/postular`, {
+      const res  = await fetch(`https://ichamba-backend-final.onrender.com/api/ofertas/${oferta.id}/postular`, {
         method: 'POST', headers
       })
       const data = await res.json()

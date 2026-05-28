@@ -29,7 +29,7 @@ interface EquipoDetalle {
   miembros: Miembro[]
 }
 
-const API = 'http://localhost:4000/api/equipos'
+const API = 'https://ichamba-backend-final.onrender.com/api/equipos'
 
 export default function Equipos() {
   const [equipos, setEquipos]           = useState<Equipo[]>([])

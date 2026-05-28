@@ -40,7 +40,7 @@ export default function Postulantes({ ofertaId, ofertaTitulo, onVolver }: {
 
   const fetchPostulantes = async () => {
     try {
-      const res  = await fetch(`http://localhost:4000/api/ofertas/${ofertaId}/postulantes`, { headers })
+      const res  = await fetch(`https://ichamba-backend-final.onrender.com/api/ofertas/${ofertaId}/postulantes`, { headers })
       const data = await res.json()
       setPostulantes(data)
     } catch (err) {
@@ -57,7 +57,7 @@ export default function Postulantes({ ofertaId, ofertaTitulo, onVolver }: {
     setError('')
     try {
       const res = await fetch(
-        `http://localhost:4000/api/ofertas/${ofertaId}/postulaciones/${p.id}`,
+        `https://ichamba-backend-final.onrender.com/api/ofertas/${ofertaId}/postulaciones/${p.id}`,
         { method: 'PUT', headers, body: JSON.stringify({ estado }) }
       )
       const data = await res.json()
@@ -74,7 +74,7 @@ export default function Postulantes({ ofertaId, ofertaTitulo, onVolver }: {
     setError('')
     try {
       // Agregar al historial
-      const res = await fetch('http://localhost:4000/api/historial', {
+      const res = await fetch('https://ichamba-backend-final.onrender.com/api/historial', {
         method: 'POST', headers,
         body: JSON.stringify({ trabajador_id: p.id, oferta_id: ofertaId })
       })
@@ -83,7 +83,7 @@ export default function Postulantes({ ofertaId, ofertaTitulo, onVolver }: {
 
       // Actualizar estado a contratado
       await fetch(
-        `http://localhost:4000/api/ofertas/${ofertaId}/postulaciones/${p.id}`,
+        `https://ichamba-backend-final.onrender.com/api/ofertas/${ofertaId}/postulaciones/${p.id}`,
         { method: 'PUT', headers, body: JSON.stringify({ estado: 'contratado' }) }
       )
 

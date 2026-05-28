@@ -7,8 +7,8 @@ interface Notificacion {
   created_at: string
 }
 
-const API_NOTIF  = 'http://localhost:4000/api/usuarios/notificaciones'
-const API_OFERTA = 'http://localhost:4000/api/ofertas'
+const API_NOTIF  = 'https://ichamba-backend-final.onrender.com/api/usuarios/notificaciones'
+const API_OFERTA = 'https://ichamba-backend-final.onrender.com/api/ofertas'
 
 export default function NotificacionesEmpleador() {
   const [notificaciones, setNotificaciones] = useState<Notificacion[]>([])

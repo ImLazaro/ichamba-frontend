@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000/api/auth'
+const API_URL = 'https://ichamba-backend-final.onrender.com/api/auth'
 
 export const loginService = async (email: string, password: string) => {
   const res = await fetch(`${API_URL}/login`, {
@@ -32,7 +32,7 @@ export const registerService = async (
 }
 export const getPerfilService = async () => {
   const token = localStorage.getItem('token')
-  const res = await fetch('http://localhost:4000/api/usuarios/perfil', {
+  const res = await fetch('https://ichamba-backend-final.onrender.com/api/usuarios/perfil', {
     headers: { 'Authorization': `Bearer ${token}` }
   })
   const data = await res.json()
@@ -48,7 +48,7 @@ export const updatePerfilService = async (datos: {
   ocupacion: string
 }) => {
   const token = localStorage.getItem('token')
-  const res = await fetch('http://localhost:4000/api/usuarios/perfil', {
+  const res = await fetch('https://ichamba-backend-final.onrender.com/api/usuarios/perfil', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
